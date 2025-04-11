@@ -1,4 +1,4 @@
-#include <gtest/gtest.h>
+#include <gtest/gtest.h> // CMakeList.txt파일 덕분에 괜찮음
 #include "calculator.h"
 #include <limits>
 #include <stdexcept>
