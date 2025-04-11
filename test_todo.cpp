@@ -57,8 +57,8 @@ TEST(TodoListTest, RemoveInvalidIndexThrows) {
 
     // TODO: Try removing at invalid indices
     // Example: negative index and out-of-bound index
-    todo.remove_task(-1);
-    todo.remove_task(33);
+    EXPECT_THROW(todo.remove_task(-1),std::out_of_range);
+    EXPECT_THROW(todo.remove_task(33),std::out_of_range);
 
     todo.destroy();
 }

@@ -59,15 +59,16 @@ void TodoList::add_task(const char* task) {
 void TodoList::remove_task(int index) {
     // TODO: check bounds, delete task, shift left
     if(index >= 0 && index < size){
+        delete[] tasks[index];
         for(int i = index; i<size-1; i++){
             tasks[i] = tasks[i+1];
         }
-        delete[] tasks[size-1] ;
+        //delete[] tasks[size-1] ;
         tasks[size-1] = nullptr;
         size -= 1;
     }
     else{
-        std::range_error("index value is wrong");
+        throw std::out_of_range("index value is wrong");
     }
 }
 
