@@ -42,7 +42,7 @@ void TodoList::string_copy(char* dest, const char* src) const {
 void TodoList::add_task(const char* task) {
     // TODO: if full, throw. otherwise allocate and copy new task
     if(size >= 32){
-        throw std::range_error("size must be under 32");
+        throw std::out_of_range("size must be under 32");
     }
     else{
         int charCount = 0;
@@ -52,6 +52,7 @@ void TodoList::add_task(const char* task) {
 
         tasks[size] = new char[charCount+1];
         string_copy(tasks[size], task);
+        size++;
     }
 }
 
